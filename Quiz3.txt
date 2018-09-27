@@ -62,9 +62,10 @@ SELECT ROWNUM URL, URL, NUMBER_OF_ATTACKS
     WHERE URL LIKE '%google%'
     ORDER BY NUMBER_OF_ATTACKS ASC; 
 --3. List the ip addresses and the time of the last attack if the attack has been produced the last year (2017) (Hint: https://stackoverflow.com/a/30071091)
-
+ 
 --4. Show the first IP Adress which has been registered with the minimum number of attacks 
-
+SELECT MIN(IP_ADDRESS), MIN(TIME_OF_LAST_ATTACK)
+    FROM ATTACKS;
 --5. Show the ip address and the number of attacks if instagram has been attack using https protocol
 SELECT  IP_ADDRESS, NUMBER_OF_ATTACKS 
     FROM ATTACKS
