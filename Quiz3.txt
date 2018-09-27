@@ -62,7 +62,9 @@ SELECT ROWNUM URL, URL, NUMBER_OF_ATTACKS
     WHERE URL LIKE '%google%'
     ORDER BY NUMBER_OF_ATTACKS ASC; 
 --3. List the ip addresses and the time of the last attack if the attack has been produced the last year (2017) (Hint: https://stackoverflow.com/a/30071091)
- 
+ SELECT ROWNUM IP_ADDRESS, TIME_OF_LAST_ATTACK
+    FROM ATTACKS
+    WHERE TIME_OF_LAST_ATTACK > '01/01/17' AND TIME_OF_LAST_ATTACK < '31/12/17';
 --4. Show the first IP Adress which has been registered with the minimum number of attacks 
 SELECT MIN(IP_ADDRESS), MIN(TIME_OF_LAST_ATTACK)
     FROM ATTACKS;
